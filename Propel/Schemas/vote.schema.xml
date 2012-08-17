@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database package="common" name="curry" defaultIdMethod="native">
+
+	<table name="vote" idMethod="native">
+		<column name="vote_id" type="integer" required="true" autoIncrement="true" primaryKey="true" />
+		<column name="entry_id" type="integer" required="true" />
+		<column name="member_id" type="integer" required="false" />
+		<column name="ip_address" type="varchar" required="true" />
+		<behavior name="timestampable" />
+		<foreign-key foreignTable="entry" onDelete="cascade">
+			<reference local="entry_id" foreign="entry_id" />
+		</foreign-key>
+		<foreign-key foreignTable="member" onDelete="cascade">
+			<reference local="member_id" foreign="member_id" />
+		</foreign-key>
+	</table>
+
+
+	<table name="ip_ban" idMethod="native">
+		<column name="ip_address" type="varchar" required="true" primaryKey="true" />
+		<foreign-key foreignTable="vote">
+			<reference local="ip_address" foreign="ip_address" />
+		</foreign-key>
+	</table>
+
+	<table name="ip_block" idMethod="native">
+		<column name="ip_address" type="varchar" required="true" primaryKey="true" />
+		<column name="entry_id" type="integer" required="true" />
+		<foreign-key foreignTable="entry" onDelete="cascade">
+			<reference local="entry_id" foreign="entry_id" />
+		</foreign-key>
+	</table>
+
+</database>
