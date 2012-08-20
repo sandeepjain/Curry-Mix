@@ -1,3 +1,11 @@
+/**
+ * Front-end module for building shoutbox
+ *
+ * @category    Curry
+ * @author      Sandeep Jain
+ *
+ */
+
 <?php
 class Project_Module_Shoutbox extends Curry_Module {
 

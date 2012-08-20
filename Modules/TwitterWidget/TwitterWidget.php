@@ -1,8 +1,12 @@
 <?php
 /**
- * Twitter Feed
+ * Twitter Widget front-end module
+ *
+ * @category    Curry
+ * @author      Sandeep Jain
  *
  */
+
 class Project_Module_TwitterWidget extends Curry_Module {
 
     protected $title='';
