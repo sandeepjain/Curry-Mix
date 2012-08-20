@@ -1,0 +1,15 @@
+{% if Messages %}
+<section class="shoutbox">
+    <header>
+      <h1>{{ Title }}</h1>
+    </header>
+    <ul>
+      {% for Message in Messages %}
+        <li>
+            <p class="shoutbox-title">{{ Message.title }}</p>
+            {{ Message.text|raw }}
+        </li>
+      {% endfor %}
+    </ul>
+</section>
+{% endif %}

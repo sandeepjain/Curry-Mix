@@ -1,0 +1,32 @@
+<section class="wgt-twitter">
+    <h4 class="wgt-twitter-title"><a href="http://twitter.com/#!/{{ TwitterId }}">{{ Title }}</a></h4>
+    <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+    <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 3,
+          interval: 3000,
+          width: 'auto',
+          height: 300,
+          theme: {
+            shell: {
+              background: 'transparent',
+              color: '#000000'
+            },
+            tweets: {
+              background: 'transparent',
+              color: '#000000',
+              links: '#000000'
+            }
+          },
+          features: {
+            scrollbar: false,
+            loop: false,
+            live: true,
+            behavior: 'default'
+          }
+        }).render().setUser('{{ TwitterId }}').start();
+    </script>
+<p><a href="http://twitter.com/#!/{{ TwitterId }}">{{ L('See All Tweets') }}</a></p>
+</section>
